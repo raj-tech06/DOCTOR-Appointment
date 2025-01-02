@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctor Appointment</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+    
+    <div class="navbar">
+        <div class="logo">DoctorCare</div>
+        <ul class="nav-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Book Appointment</a></li>
+            <li><a href="#">Doctors</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+        <button class="login-btn" id="loginBtn">Login / Sign Up</button>
+    </div>
+
+    <div class="content">
+        <h1>Welcome to DoctorCare</h1>
+        <p>Book your doctor appointment with ease.</p>
+    </div>
+    
+<!-- -------------------------------------booking------------------------------------------------------------------------- -->
+
+    <main>
+        <section id="booking-section">
+            <h2>Book Your Appointment</h2>
+            <form id="appointment-form">
+                <label for="name">Full Name:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Email Address:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="doctor">Select Doctor:</label>
+                <select id="doctor" name="doctor">
+                    <option value="doctor1">Dr. pankaj raghuwanshi</option>
+                    <option value="doctor2">Dr. radhe shyam</option>
+                    <option value="doctor3">Dr. Akash chopda</option>
+                </select>
+
+                <label for="date">Appointment Date:</label>
+                <input type="date" id="date" name="date" required>
+
+                <label for="time">Time:</label>
+                <input type="time" id="time" name="time" required>
+
+                <button type="submit" id="submit-button">Book Appointment</button>
+            </form>
+            <p id="confirmation-message"></p>
+        </section>
+    </main>
+
+    <!-- -------------------------------------booking end------------------------------------------------------------------------- -->
+
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+
+    <script src="index.js"></script>
+</body>
+</html>
