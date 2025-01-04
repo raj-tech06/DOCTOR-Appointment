@@ -26,8 +26,10 @@ document.getElementById('loginBtn').addEventListener('click', function() {
 
 // ------------------------------booking------------------------
 
+
+// Form submit hone par data ko localStorage mein store karenge
 document.getElementById('appointment-form').addEventListener('submit', function(event) {
-    event.preventDefault();  // Prevent the form from submitting to a server
+    event.preventDefault();  // Form ko submit hone se rokna
 
     // Get form values
     const name = document.getElementById('name').value;
@@ -36,18 +38,17 @@ document.getElementById('appointment-form').addEventListener('submit', function(
     const date = document.getElementById('date').value;
     const time = document.getElementById('time').value;
 
-    // -------------------------confirmation message show---------------------------
-    const confirmationMessage = document.getElementById('confirmation-message');
-    confirmationMessage.textContent = `Thank you, ${name}! Your appointment with ${doctor} on ${date} at ${time} has been successfully booked.`;
-// location.href="book.html"
-    // ---------------------Reset the form after submit-------------------
-    document.getElementById('appointment-form').reset();
+    // Store values in localStorage
+    localStorage.setItem('name', name);
+    localStorage.setItem('email', email);
+    localStorage.setItem('doctor', doctor);
+    localStorage.setItem('date', date);
+    localStorage.setItem('time', time);
+
+    // Redirect to the second page (details.html)
+    window.location.href = 'book.html'; 
 });
+
+
+// 
 // --------------------------booking end---------------------------------
-
-
-
-
-
-
-
