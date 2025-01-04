@@ -181,7 +181,7 @@ button:hover {
 }
 
 /* Footer Styling */
-footer {
+/* footer {
     background-color: #333;
     color: white;
     padding: 10px;
@@ -189,7 +189,7 @@ footer {
     position: absolute;
     bottom: 0;
     width: 100%;
-}
+} */
 
 /* -------------------------------------------------------home end--------------------------------------- */
 
@@ -223,7 +223,7 @@ footer {
     width: 100%;
     opacity: 0.6;
 }
-#qqq img{
+#div4 img{
     width: 200px;
 }
 
@@ -271,9 +271,26 @@ margin-bottom: -6%;
 }
 .footimg2 img{
     margin-top: 40px;
-        width: 200px;
-    }
+    width: 200px;
+}
 
 
 
 
+
+#foottext-1{
+    color: white;
+    margin-top: -14%;
+    margin-left: 45%;
+}
+#foottext-2 ul{
+    margin-top: 8%;
+    margin-left: 36%;
+    gap: 40px;
+    display: flex;
+}
+#foottext-2 ul li{
+    list-style: none;
+    color: white;
+    /* margin-left: 10%; */
+}
