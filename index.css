@@ -30,7 +30,13 @@ body {
     color: #fff;
     text-transform: uppercase;
 }
+.navbar .logo img{
+    margin-left: -32px;
+}
+.navbar .logo img:hover{
+    width: 110px;
 
+}
 
 .nav-links {
     display: flex;
@@ -44,7 +50,7 @@ body {
 .nav-links a {
     text-decoration: none;
     color: #fff;
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     transition: color 0.3s ease-in-out;
 }
 
@@ -220,6 +226,7 @@ button:hover {
     height: 53%;
 }
 #div3 img{
+    margin-top: -30px;
     width: 100%;
     opacity: 0.6;
 }
@@ -281,10 +288,10 @@ margin-bottom: -6%;
 #foottext-1{
     color: white;
     margin-top: -14%;
-    margin-left: 45%;
+    margin-left: 46%;
 }
 #foottext-2 ul{
-    margin-top: 8%;
+    margin-top: 9%;
     margin-left: 36%;
     gap: 40px;
     display: flex;
@@ -293,4 +300,21 @@ margin-bottom: -6%;
     list-style: none;
     color: white;
     /* margin-left: 10%; */
+}
+#foottext-3 ul{
+    font-size: 24px;
+    color: white;
+    margin-top: -5%;
+    margin-left: 42%;
+    gap: 40px;
+    display: flex;
+}
+#foottext-3 ul i:hover{
+    cursor: pointer;
+    color: black
+}
+
+#foottext-2 ul li:hover{
+    cursor: pointer;
+    color: #857f5e;
 }

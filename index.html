@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Doctor Appointment</title>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
     <link rel="stylesheet" href="index.css">
 </head>
 <body>
@@ -12,14 +15,14 @@
     <div class="navbar">
         <div class="logo"><img src="img/2b8bd2e89da8bbf328e06480a9ad4f7c.png" width="60px" height="40px">DoctorCare </div>
         <ul class="nav-links">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Book Appointment</a></li>
-            <li><a href="#">Doctors</a></li>
-            <li><a href="#">Services</a></li>
-            <li><a href="#">About Us</a></li>
-            <li><a href="#">Contact</a></li>
+            <li  data-aos="flip-left" data-aos-duration="2500"><a href="#">Home</a></li>
+            <li  data-aos="flip-left" data-aos-duration="2500"><a href="#">Book Appointment</a></li>
+            <li  data-aos="zoom-in-down" data-aos-duration="2500"><a href="#">Doctors</a></li>
+            <li  data-aos="zoom-in-down" data-aos-duration="2500"><a href="#">Services</a></li>
+            <li data-aos="flip-left" data-aos-duration="2500"><a href="#">About Us</a></li>
+            <li data-aos="flip-left" data-aos-duration="2500"><a href="#">Contact</a></li>
         </ul>
-        <button class="login-btn" id="loginBtn">Login / Sign Up</button>
+        <button class="login-btn" id="loginBtn" data-aos="fade-up-left"  data-aos-duration="1500">Login / Sign Up</button>
     </div>
 
     <div class="content">
@@ -61,11 +64,11 @@
     <!-- -------------------------------------booking end------------------------------------------------------------------------- -->
 
 <div id="div1">
-    <img src="img/139c5cb1623fc474ffbba6fe920c0d33.png" alt=""> <br><br><br><br>
+    <img src="img/139c5cb1623fc474ffbba6fe920c0d33.png" data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1500" data-aos-offset="510"> <br><br><br><br>
     
 </div>
 <div id="div2">
-    <img src="img/kisspng-sahara-nurses-bureau-nursing-home-care-health-care-nurse-5ab9dc126d9730.7811115415221299384489.png" alt="">
+    <img src="img/kisspng-sahara-nurses-bureau-nursing-home-care-health-care-nurse-5ab9dc126d9730.7811115415221299384489.png"  data-aos="fade-left" data-aos-anchor="#example-anchor" data-aos-offset="500" data-aos-duration= "2500" >
 
 </div>
 
@@ -75,15 +78,10 @@
 
 
 <div id="div4">
-    <img src="img/transparent-glasses-doctor-examining-patient-in-hospital-setting65ee84c46fb3d5.9067017817101303724575.png" alt="">
-    <img src="img/904b3618a197446292f60cd5df629265.png" alt="">
-    <img src="img/7c3259f292fb3bf3805e8688f34e50a0.png" alt="">
+    <img src="img/transparent-glasses-doctor-examining-patient-in-hospital-setting65ee84c46fb3d5.9067017817101303724575.png" alt=""  data-aos="fade-right" data-aos-anchor-placement="center-center">
+    <img src="img/904b3618a197446292f60cd5df629265.png"  data-aos="fade-right" data-aos-anchor-placement="center-center">
+    <img src="img/7c3259f292fb3bf3805e8688f34e50a0.png"  data-aos="fade-left" data-aos-anchor-placement="center-center" data-aos-duration="1000" >
  
-
-
-
-
-
 </div>
 
 
@@ -113,7 +111,8 @@
 
 <div id="foot">
     <div class="footimg1"><img src="img/pngwing.com.png" alt=""></div>
-    <div class="footimg2"><img src="img/d8641a4613c00d3e041a2abf61260452.png" alt=""></div>
+    <div class="footimg2"><img src="img/d8641a4613c00d3e041a2abf61260452.png" data-aos="fade-down"
+        data-aos-duration="3000"></div>
 </div>
 
 <div id="foottext-1">
@@ -133,6 +132,14 @@
         <li>Advertisers</li>
     </ul>
 </div>
+<div id="foottext-3">
+    <ul>
+        <i class="fa-brands fa-instagram"></i>
+        <i class="fa-brands fa-facebook"></i>
+        <i class="fa-brands fa-linkedin"></i>
+        <i class="fa-brands fa-twitter"></i>
+    </ul>
+</div>
 
 
 
@@ -140,6 +147,12 @@
     
 
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<!-- ---------------aos--------------------- -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+    AOS.init();
+  </script>
 
 
     <script src="index.js"></script>
