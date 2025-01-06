@@ -52,3 +52,18 @@ document.getElementById('appointment-form').addEventListener('submit', function(
 
 // 
 // --------------------------booking end---------------------------------
+
+// -----------------typejs---------------------
+
+var typed = new Typed('#element', {
+    strings: ['I m a Doctor'],
+    typeSpeed: 50,
+    backSpeed:50,
+
+  });
+// ------------------------typejs end-------------------------------
+
+// ----------------------------loader--------------------------------------------
+
+
+
