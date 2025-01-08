@@ -1,7 +1,7 @@
 
 
 
-//----------------login/signup button click pop-up show karna-----------------
+// //----------------login/signup button click pop-up show karna-----------------
 
 document.getElementById('loginBtn').addEventListener('click', function() {
     Swal.fire({
@@ -16,49 +16,94 @@ document.getElementById('loginBtn').addEventListener('click', function() {
     });
 });
 
-// const loginBtn = document.getElementById('loginBtn');
 
-// loginBtn.addEventListener('click', () => {
+// // =--------------------------- login btn end---------------------------------------------------
 
-//     window.location.href = "drlogin.html";  
-// });
-// =---------------------------btn end---------------------------------------------------
+// // ------------------------------booking------------------------
 
-// ------------------------------booking------------------------
+// Check if edit mode is on
+window.onload = function() {
+    const editIndex = localStorage.getItem('editIndex');
+    if (editIndex !== null) {
+        const users = JSON.parse(localStorage.getItem('users'));
+        const user = users[editIndex];
 
+        document.getElementById('name').value = user.name;
+        document.getElementById('email').value = user.email;
+        document.getElementById('doctor').value = user.doctor;
+        document.getElementById('date').value = user.date;
+        document.getElementById('time').value = user.time;
+    }
+};
 
-// Form submit hone par data ko localStorage mein store karenge
+// Handle form submission
 document.getElementById('appointment-form').addEventListener('submit', function(event) {
-    event.preventDefault();  // Form ko submit hone se rokna
+    event.preventDefault();
 
-    // Get form values
     const name = document.getElementById('name').value;
     const email = document.getElementById('email').value;
     const doctor = document.getElementById('doctor').value;
     const date = document.getElementById('date').value;
     const time = document.getElementById('time').value;
 
-    // Store values in localStorage
-    localStorage.setItem('name', name);
-    localStorage.setItem('email', email);
-    localStorage.setItem('doctor', doctor);
-    localStorage.setItem('date', date);
-    localStorage.setItem('time', time);
+    const users = JSON.parse(localStorage.getItem('users')) || [];
+    const editIndex = localStorage.getItem('editIndex');
 
-    // Redirect to the second page (details.html)
-    window.location.href = 'book.html'; 
+    if (editIndex !== null) {
+        // If editing, update the existing user
+        users[editIndex] = { name, email, doctor, date, time };
+        localStorage.removeItem('editIndex');
+    } else {
+        // Add new user
+        users.push({ name, email, doctor, date, time });
+    }
+
+    // Save updated users list in localStorage
+    localStorage.setItem('users', JSON.stringify(users));
+
+    // Redirect to book.html
+    window.location.href = 'book.html';
 });
 
 
-// 
+// --------------------end---------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // --------------------------booking end---------------------------------
 
 // -----------------typejs---------------------
 
 var typed = new Typed('#element', {
-    strings: ['I m a Doctor'],
+    strings: ['A good doctor treats the disease a great doctor treats the patient who has the disease'],
     typeSpeed: 50,
     backSpeed:50,
+    loop: true,
+    loopCount: Infinity,
 
   });
 // ------------------------typejs end-------------------------------
