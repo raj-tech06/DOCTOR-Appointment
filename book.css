@@ -30,17 +30,102 @@ button:hover {
     width: 40%;
     margin-left: 30%;
 }
+/* --------------------------------------- */
 
 
 
+/*---------------- appointment details start----------------- */
 
 
-
-
-
-
-
-#updatename{
-    width: 100%;
-    height: 20%;
+/* #appointment-details{
+    
+    background-color: rgba(134, 102, 102, 0.445);
+} */
+#appointment-div{
+    font-weight: bolder;
+    padding: 20px;
+    border-radius: 20px;
+    background-color: rgba(62, 122, 200, 0.549);
 }
+#appointment-div div{
+ 
+    margin-left: 20%;
+}
+
+span{
+    color: red;
+    margin-left: 20px;
+}
+.any{
+    color: black;
+    margin-left: 5%;
+    font-size: x-large;
+}
+.btn1{
+    width: 20%;
+margin-left: 9%;
+}
+.btn2{
+    width: 20%;
+margin-left: 1%;
+}
+
+
+
+
+
+/* update refill form */
+#updatename{
+    width: 44%;
+    margin-left: 15px;
+    height: 20px;
+}
+#updateemail{
+    width: 44%;
+    margin-left: 18px;
+    height: 20px;
+}
+
+#updatedoctor{
+    width: 44%;
+    margin-left: 14px;
+    height: 23px;
+}
+
+#updatedate{
+    width: 44%;
+    margin-left: 24px;
+    height: 20px;
+}
+#updatetime{
+    width: 44%;
+    margin-left: 25px;
+    height: 20px;
+
+}
+
+
+#updatebutton{
+    width: 60%;
+    margin-left: 6%;
+}
+
+#refillform{
+    background-color: azure;
+/* text-align: center; */
+    margin-left: 30%;
+    width: 40%;
+    height: 60vh;
+    border-radius: 40px;
+    border: 2px solid red;
+}
+.refillmsg{
+    font-style: oblique;
+    font-size: x-large;
+    margin-left: 17%;
+}
+#refillform div{
+    margin-left: 23%;
+}
+
+/* update refill form */

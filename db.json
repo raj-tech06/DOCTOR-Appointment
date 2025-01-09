@@ -1,20 +1,12 @@
 {
   "appointments": [
     {
-      "id": "c460",
-      "name": "anil",
-      "email": "amit.sharma@gmail.com",
+      "name": "raj",
+      "email": "ayeshakhan89@gmail.com",
       "doctor": "Dr. pankaj raghuwanshi",
-      "date": "2025-01-24",
-      "time": "18:08"
-    },
-    {
-      "id": "1199",
-      "name": "deepak",
-      "email": "amit.sharma@gmail.com",
-      "doctor": "Dr. pankaj raghuwanshi",
-      "date": "2025-01-23",
-      "time": "16:12"
+      "date": "2025-01-27",
+      "time": "16:00",
+      "id": "20e8"
     }
   ]
 }

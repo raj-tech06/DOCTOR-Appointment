@@ -1,6 +1,8 @@
 // //----------------login/signup button click pop-up show karna-----------------
 
-document.getElementById('loginBtn').addEventListener('click', function() {
+
+let loginsignbtn=()=>{
+
     Swal.fire({
         title: 'Login / Sign Up',
         html: `
@@ -11,11 +13,11 @@ document.getElementById('loginBtn').addEventListener('click', function() {
         icon: 'info',
         confirmButtonText: 'Close'
     });
-});
+};
 
-// // =--------------------------- login btn end---------------------------------------------------
+// --------------------------- login btn end---------------------------------------------------
 
-// // ------------------------------booking------------------------
+// ------------------------------booking------------------------
 let fetchData= async ()=>{
 
     try{
@@ -24,26 +26,39 @@ let fetchData= async ()=>{
     let res= await fetch(url,{method:"GET"})
     let data= await res.json()
     console.log(data);
+    
 
     let show=document.querySelector("#appointment-details")
 
     
-    table_data = data.map((user)=>{
+   data.map((user)=>{
         
   
     show.innerHTML+=`
-        <tr>
-        <td>  ${user.name}   </td>
-        <td> ${user.email}  </td>
-        <td>  ${user.doctor}  </td>
-        <td> ${user.date}  </td>
-        <td>  ${user.time}   </td>
-        <td><button onclick="del('${user.id}')"> Cancel  </button> </td> 
-        <td><button onclick="formfill('${user.id}')"> Update </button> </td>
-      </tr>
-      `  
+<div id="appointment-div">
+    <div> Name: <span>${user.name} </span></div><hr>
+    <div> Email: <span>${user.email} </span></div><hr>
+    <div> Doctor: <span>  ${user.doctor} </span></div><hr>
+    <div> Date: <span> ${user.date} </span></div><hr>
+    <div> Time: <span>${user.time} </span></div><hr>
+
+    <span class="any">Click For any Changes</span> 
+    <button onclick="del('${user.id}')" class="btn1"> Cancel  </button>
+    <button onclick="formfill('${user.id}')"  class="btn2"> Update </button> 
+
+</div> <br>
+    `
     })
-   
+     //     <tr>
+    //     <td>  ${user.name}   </td>
+    //     <td> ${user.email}  </td>
+    //     <td>  ${user.doctor}  </td>
+    //     <td> ${user.date}  </td>
+    //     <td>  ${user.time}   </td>
+    //     <td><button onclick="del('${user.id}')"> Cancel  </button> </td> 
+    //     <td><button onclick="formfill('${user.id}')"> Update </button> </td>
+    //   </tr>
+    //   ` 
 }
 catch(error){
     alert("error");
@@ -52,13 +67,8 @@ catch(error){
 
 }
 
-let del=(id)=>{
 
-    let url=`http://localhost:3000/appointments/${id}`
 
-    fetch(url,{method:"DELETE"})
-
-}
 
 let ins=()=>{
     let inpname=document.querySelector("#name").value 
@@ -100,70 +110,12 @@ let ins=()=>{
     }
 
     
- let formfill=async(id)=>{
-
-    let url=`http://localhost:3000/appointments/${id}`
-   let res=await fetch(url)
-   let data=await res.json()
-  
-   let formdata=`
-     Enter Name <input type="text" value="${data.name}" id="updatename"><br>
-     Enter email <input type="text" value="${data.email}" id="updateemail"><br>
-     Enter doctor <input type="text" value="${data.doctor}" id="updatedoctor"><br>
-     Enter Date <input type="date" value="${data.date}" id="updatedate"><br>
-     Enter time <input type="date" value="${data.time}" id="updatetime"><br>
-    
-      <input type="submit" onclick="finalupdate('${data.id}')">
-   
-   `
-
-   document.querySelector("#appointment-details1").innerHTML=formdata
-
-}
-
-let finalupdate=(id)=>{
-
-    let updatename=document.querySelector("#updatename").value;
-    let updateemail=document.querySelector("#updateemail").value;
-    let updatedoctor=document.querySelector("#updatedoctor").value;
-    let updatedate=document.querySelector("#updatedate").value;
-    let updatetime=document.querySelector("#updatetime").value;
-
-    
-try{
-    let url=`http://localhost:3000/appointments/${id}`
-      fetch(url,
-        {method:"PUT",
-         
-        headers:{
-            "Content-Type":"application/json",
-        },
-
-        body:JSON.stringify(
-            {
-                "name":updatename,
-                "email":updateemail,
-                "doctor":updatedoctor,
-                "date":updatedate,
-                "time":updatetime
-
-            }
-        )
-        })
-        
-    }
-    catch(error){
-        console.log(error);
-        
-    }
-
-
- }
-
 // --------------------end---------------------
 
 
 
+    
+    
 
 
 

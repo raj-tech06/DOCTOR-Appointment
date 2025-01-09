@@ -1,62 +1,93 @@
 
-
-
-// window.onload = function() {
-//     const users = JSON.parse(localStorage.getItem('users')) || [];
-
-//     const userList = document.getElementById('appointment-details');
-//     userList.innerHTML = ''; // Clear any previous data
-
-//     users.forEach((user, index) => {
-//         const userDiv = document.createElement('div');
-//         userDiv.innerHTML = `
-//             <h3>
-//                 Name: ${user.name} <br>
-//                 Email: ${user.email} <br>
-//                 Doctor: ${user.doctor} <br>
-//                 Date: ${user.date} <br>
-//                 Time: ${user.time} <br>
-//             </h3>
-//             <button class="editButton" onclick="editUser(${index})">Edit</button>
-//             <button class="deleteButton" onclick="deleteUser(${index})">Delete</button>
-//         `;
-//         userList.appendChild(userDiv);
-//     });
-
-//     document.getElementById('backButton').addEventListener('click', function() {
-//         window.location.href = 'index.html';
-//     });
-// };
-
-// function editUser(index) {
-//     const users = JSON.parse(localStorage.getItem('users'));
-//     const user = users[index];
-
-//     localStorage.setItem('editIndex', index);
-//     localStorage.setItem('name', user.name);
-//     localStorage.setItem('email', user.email);
-//     localStorage.setItem('doctor', user.doctor);
-//     localStorage.setItem('date', user.date);
-//     localStorage.setItem('time', user.time);
-
-//     window.location.href = 'index.html';
-// }
-
-// function deleteUser(index) {
-//     const users = JSON.parse(localStorage.getItem('users'));
-//     users.splice(index, 1);
-
-//     localStorage.setItem('users', JSON.stringify(users));
-//     window.location.reload();
-// }
+let goBack=()=>{
+    location.href="index.html";
+}
+// -----------------------------------------------------------------------------------
 
 
 
 
 
-window.onload = function() {
 
-document.getElementById('backButton').addEventListener('click', function() {
-    window.location.href = 'index.html';
-});
-};
+
+
+
+
+
+
+
+
+let del=(id)=>{
+
+    let url=`http://localhost:3000/appointments/${id}`
+
+    fetch(url,{method:"DELETE"})
+
+}
+
+let formfill=async(id)=>{
+
+    let url=`http://localhost:3000/appointments/${id}`
+   let res=await fetch(url)
+   let data=await res.json()
+  
+   let formdata=`
+   <div id="refillform">
+      <p class="refillmsg">Update Your Appointment Details</p>
+    <div> Enter Name <input type="text" value="${data.name}" id="updatename"></div><br>
+     <div> Enter email <input type="text" value="${data.email}" id="updateemail"></div><br>
+     <div> Enter doctor <select value="${data.doctor}" id="updatedoctor">
+                    <option value="Dr. pankaj raghuwanshi">Dr. pankaj raghuwanshi</option>
+                    <option value="Dr. radhe shyam">Dr. radhe shyam</option>
+                    <option value="Dr. Akash chopda">Dr. Akash chopda</option>
+                </select>
+</div> <br>
+     <div> Enter Date <input type="date" value="${data.date}" id="updatedate"></div><br>
+     <div> Enter time <input type="time" value="${data.time}" id="updatetime"></div><br>
+    
+     <div> <input type="submit" onclick="finalupdate('${data.id}')" id="updatebutton"></div>
+   </div>
+   `
+
+   document.querySelector("#appointment-details1").innerHTML=formdata
+
+}
+
+let finalupdate=(id)=>{
+
+    let updatename=document.querySelector("#updatename").value;
+    let updateemail=document.querySelector("#updateemail").value;
+    let updatedoctor=document.querySelector("#updatedoctor").value;
+    let updatedate=document.querySelector("#updatedate").value;
+    let updatetime=document.querySelector("#updatetime").value;
+
+    
+try{
+    let url=`http://localhost:3000/appointments/${id}`
+      fetch(url,
+        {method:"PUT",
+         
+        headers:{
+            "Content-Type":"application/json",
+        },
+
+        body:JSON.stringify(
+            {
+                "name":updatename,
+                "email":updateemail,
+                "doctor":updatedoctor,
+                "date":updatedate,
+                "time":updatetime
+
+            }
+        )
+        })
+        
+    }
+    catch(error){
+        console.log(error);
+        
+    }
+
+
+ }
