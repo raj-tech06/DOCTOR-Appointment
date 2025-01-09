@@ -169,9 +169,6 @@ button:hover {
 
 /* -------------------------------------------------------home end--------------------------------------- */
 
-
-
-
 #div1{
    
     margin-left: 3%;
@@ -221,13 +218,9 @@ button:hover {
 }
 
 
-
-
 #div4 img{
     width: 200px;
 }
-
-
 
 .div4img4 img{
     margin-top: -86%;
@@ -235,6 +228,40 @@ button:hover {
     width: 150px;
     height: 60vh;
 }
+
+
+@media (max-width: 768px) {
+    #div1 img{
+    
+        width: 150px;
+        
+    }
+    #div2{
+       /* display: none; */
+width: 200px;
+       margin-top: -309%;
+    }
+    #div3-text h1{
+        font-size: small;
+margin-top: 110%;
+    }
+    
+    #div4 img{
+        width: 50px;
+    }
+    .div4img4 img{
+        margin-left: 74%;
+        width: 100px;
+        height: 35vh;
+    }
+    .div4img4{
+        margin-left: -12%;
+    }
+}
+
+
+
+
 
 
 
