@@ -300,3 +300,30 @@ margin-bottom: -6%;
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+/* Default styles for checkbox (it won't show up in normal views) */
+.checkbox-container {
+    display: none;
+}
+
+/* Media Query for responsive design */
+@media (max-width: 768px) {
+    .checkbox-container {
+        display: block;
+        margin-top: 15px;
+    }
+
+    .checkbox-container input {
+        margin-right: 10px;
+    }
+}

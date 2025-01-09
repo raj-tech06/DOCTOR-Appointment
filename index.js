@@ -1,6 +1,3 @@
-
-
-
 // //----------------login/signup button click pop-up show karna-----------------
 
 document.getElementById('loginBtn').addEventListener('click', function() {
@@ -16,59 +13,154 @@ document.getElementById('loginBtn').addEventListener('click', function() {
     });
 });
 
-
 // // =--------------------------- login btn end---------------------------------------------------
 
 // // ------------------------------booking------------------------
+let fetchData= async ()=>{
 
-// Check if edit mode is on
-window.onload = function() {
-    const editIndex = localStorage.getItem('editIndex');
-    if (editIndex !== null) {
-        const users = JSON.parse(localStorage.getItem('users'));
-        const user = users[editIndex];
+    try{
+    let url='http://localhost:3000/appointments'
 
-        document.getElementById('name').value = user.name;
-        document.getElementById('email').value = user.email;
-        document.getElementById('doctor').value = user.doctor;
-        document.getElementById('date').value = user.date;
-        document.getElementById('time').value = user.time;
+    let res= await fetch(url,{method:"GET"})
+    let data= await res.json()
+    console.log(data);
+
+    let show=document.querySelector("#appointment-details")
+
+    
+    table_data = data.map((user)=>{
+        
+  
+    show.innerHTML+=`
+        <tr>
+        <td>  ${user.name}   </td>
+        <td> ${user.email}  </td>
+        <td>  ${user.doctor}  </td>
+        <td> ${user.date}  </td>
+        <td>  ${user.time}   </td>
+        <td><button onclick="del('${user.id}')"> Cancel  </button> </td> 
+        <td><button onclick="formfill('${user.id}')"> Update </button> </td>
+      </tr>
+      `  
+    })
+   
+}
+catch(error){
+    alert("error");
+    
+}
+
+}
+
+let del=(id)=>{
+
+    let url=`http://localhost:3000/appointments/${id}`
+
+    fetch(url,{method:"DELETE"})
+
+}
+
+let ins=()=>{
+    let inpname=document.querySelector("#name").value 
+    let inpemail=document.querySelector("#email").value 
+    let inpdoctor=document.querySelector("#doctor").value 
+    let inpdate=document.querySelector("#date").value 
+    let inptime=document.querySelector("#time").value 
+
+    try{
+        let url='http://localhost:3000/appointments'
+          fetch(url,
+            {method:"POST",
+             
+            headers:{
+                "Content-Type":"application/json",
+            },
+    
+            body:JSON.stringify(
+                {
+                    "name":inpname,
+                    "email":inpemail,
+                    "doctor":inpdoctor,
+                    "date":inpdate,
+                    "time":inptime
+    
+                }
+            )
+            })
+            
+        }
+        catch(error){
+            console.log(error);
+            
+        }
+    
+        location.href="book.html"
+        return false;
+    
     }
-};
 
-// Handle form submission
-document.getElementById('appointment-form').addEventListener('submit', function(event) {
-    event.preventDefault();
+    
+ let formfill=async(id)=>{
 
-    const name = document.getElementById('name').value;
-    const email = document.getElementById('email').value;
-    const doctor = document.getElementById('doctor').value;
-    const date = document.getElementById('date').value;
-    const time = document.getElementById('time').value;
+    let url=`http://localhost:3000/appointments/${id}`
+   let res=await fetch(url)
+   let data=await res.json()
+  
+   let formdata=`
+     Enter Name <input type="text" value="${data.name}" id="updatename"><br>
+     Enter email <input type="text" value="${data.email}" id="updateemail"><br>
+     Enter doctor <input type="text" value="${data.doctor}" id="updatedoctor"><br>
+     Enter Date <input type="date" value="${data.date}" id="updatedate"><br>
+     Enter time <input type="date" value="${data.time}" id="updatetime"><br>
+    
+      <input type="submit" onclick="finalupdate('${data.id}')">
+   
+   `
 
-    const users = JSON.parse(localStorage.getItem('users')) || [];
-    const editIndex = localStorage.getItem('editIndex');
+   document.querySelector("#appointment-details1").innerHTML=formdata
 
-    if (editIndex !== null) {
-        // If editing, update the existing user
-        users[editIndex] = { name, email, doctor, date, time };
-        localStorage.removeItem('editIndex');
-    } else {
-        // Add new user
-        users.push({ name, email, doctor, date, time });
+}
+
+let finalupdate=(id)=>{
+
+    let updatename=document.querySelector("#updatename").value;
+    let updateemail=document.querySelector("#updateemail").value;
+    let updatedoctor=document.querySelector("#updatedoctor").value;
+    let updatedate=document.querySelector("#updatedate").value;
+    let updatetime=document.querySelector("#updatetime").value;
+
+    
+try{
+    let url=`http://localhost:3000/appointments/${id}`
+      fetch(url,
+        {method:"PUT",
+         
+        headers:{
+            "Content-Type":"application/json",
+        },
+
+        body:JSON.stringify(
+            {
+                "name":updatename,
+                "email":updateemail,
+                "doctor":updatedoctor,
+                "date":updatedate,
+                "time":updatetime
+
+            }
+        )
+        })
+        
+    }
+    catch(error){
+        console.log(error);
+        
     }
 
-    // Save updated users list in localStorage
-    localStorage.setItem('users', JSON.stringify(users));
 
-    // Redirect to book.html
-    window.location.href = 'book.html';
-});
-
+ }
 
 // --------------------end---------------------
-
-
 
 
 
@@ -103,12 +195,8 @@ var typed = new Typed('#element', {
     typeSpeed: 50,
     backSpeed:50,
     loop: true,
-    loopCount: Infinity,
+    loopCount: Infinity
 
   });
 // ------------------------typejs end-------------------------------
-
-// ----------------------------loader--------------------------------------------
-
-
 

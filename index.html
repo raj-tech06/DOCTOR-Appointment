@@ -36,7 +36,7 @@
     <main>
         <section id="booking-section">
             <h2>Book Your Appointment</h2>
-            <form id="appointment-form">
+            <form id="appointment-form" >
                 <label for="name">Full Name:</label>
                 <input type="text" id="name" name="name" required>
 
@@ -56,7 +56,8 @@
                 <label for="time">Time:</label>
                 <input type="time" id="time" name="time" required>
 
-                <button type="submit" id="submit-button">Book Appointment</button>
+
+                <button type="submit" id="submit-button" onclick="return ins()">Book Appointment</button>
             </form>
             <p id="confirmation-message"></p>
         </section>
