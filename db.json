@@ -1,19 +1,12 @@
 {
   "appointments": [
     {
-      "name": "raj",
+      "name": "jj",
       "email": "ayeshakhan89@gmail.com",
       "doctor": "Dr. pankaj raghuwanshi",
-      "date": "2025-01-27",
-      "time": "16:00",
-      "id": "20e8"
-    },
-    {
-      "name": "raj",
-      "email": "ayeshakhan89@gmail.com",
-      "doctor": "Dr. pankaj raghuwanshi",
-      "date": "2025-01-27",
-      "time": "16:00"
+      "date": "2025-01-31",
+      "time": "23:16",
+      "id": "f396"
     }
   ]
 }

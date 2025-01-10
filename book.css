@@ -37,18 +37,21 @@ button:hover {
 /*---------------- appointment details start----------------- */
 
 
-/* #appointment-details{
-    
-    background-color: rgba(134, 102, 102, 0.445);
-} */
+#appointment-details{
+    border-radius: 40px;
+    border: 1px solid black;
+    /* background-color: rgba(134, 102, 102, 0.445); */
+}
 #appointment-div{
     font-weight: bolder;
+    border: 2px double black;
     padding: 20px;
-    border-radius: 20px;
-    background-color: rgba(62, 122, 200, 0.549);
+    border-radius: 40px;
+    background-color: aliceblue;
+    /* background-color: rgba(62, 122, 200, 0.549); */
 }
 #appointment-div div{
- 
+    border-color: black;
     margin-left: 20%;
 }
 

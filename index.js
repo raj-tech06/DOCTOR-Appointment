@@ -1,6 +1,25 @@
 // //----------------login/signup button click pop-up show karna-----------------
 
 
+
+
+// document.getElementById('loginBtn').addEventListener('click', function() {
+//     Swal.fire({
+//         title: 'Login / Sign Up',
+//         html: `
+//             <p>Please login to your account or sign up to get started.</p><br>
+//             <a href="drlogin.html" class="swal-link">Login Here</a> <br><br>
+//             <a href="drsignup.html" class="swal-link">Sign Up Here</a>
+//         `,
+//         icon: 'info',
+//         confirmButtonText: 'Close'
+//     });
+// });
+
+
+
+
+
 let loginsignbtn=()=>{
 
     Swal.fire({
@@ -43,7 +62,7 @@ let fetchData= async ()=>{
     <div> Time: <span>${user.time} </span></div><hr>
 
     <span class="any">Click For any Changes</span> 
-    <button onclick="del('${user.id}')" class="btn1"> Cancel  </button>
+    <button onclick="condel('${user.id}')" class="btn1"> Cancel  </button>
     <button onclick="formfill('${user.id}')"  class="btn2"> Update </button> 
 
 </div> <br>
@@ -103,8 +122,15 @@ let ins=()=>{
             console.log(error);
             
         }
+        if(localStorage.getItem("islogin")=="true"){
+            location.href="book.html";
+          }
+          else{
+            alert("please login first")
+        }
+            
     
-        location.href="book.html"
+        // location.href="book.html"
         return false;
     
     }
@@ -114,6 +140,17 @@ let ins=()=>{
 
 
 
+let check=()=>{
+    
+if(localStorage.getItem("check")=="true"){
+    location.href="book.html"
+    // location.href="drlogin.html";
+  }
+  else{
+    // alert("please login first")
+    Swal.fire("login first");
+}
+    }
     
     
 

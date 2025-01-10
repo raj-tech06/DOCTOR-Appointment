@@ -231,8 +231,11 @@ button:hover {
 
 
 @media (max-width: 768px) {
+    #div1 {
+        margin-bottom: 0;
+    }
     #div1 img{
-    
+    margin-bottom: 0;
         width: 150px;
         
     }
@@ -240,6 +243,10 @@ button:hover {
        /* display: none; */
 width: 200px;
        margin-top: -309%;
+    }
+    #div3{
+        margin-top: 120%;
+        margin-bottom: 0;
     }
     #div3-text h1{
         font-size: small;

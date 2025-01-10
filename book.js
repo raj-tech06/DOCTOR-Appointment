@@ -1,21 +1,42 @@
-
+//--------------- back button=--------------------
 let goBack=()=>{
     location.href="index.html";
 }
 // -----------------------------------------------------------------------------------
 
 
+//--------------- deleted sweetalart----------------
+
+let condel=(id)=>{
+
+    Swal.fire({
+        title: "Are you sure?",
+        text: "Do you want to delete your appointment?",
+        // icon: "warning",
+        imageUrl:"img/2b8bd2e89da8bbf328e06480a9ad4f7c.png" ,
+        imageWidth: 100,
+        imageHeight: 100,
+        imageAlt: "Custom image",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Yes, delete it!"
+      }).then((result) => {
+        if (result.isConfirmed) {
+            del(id)
+          Swal.fire({
+            title: "Deleted!",
+            text: "Your file has been deleted.",
+            icon: "success",
+            
+          });
+        }
+      });
+
+}
 
 
-
-
-
-
-
-
-
-
-
+// -----------delete function-------------
 
 let del=(id)=>{
 
@@ -24,6 +45,8 @@ let del=(id)=>{
     fetch(url,{method:"DELETE"})
 
 }
+
+// ----------------refillform------------------
 
 let formfill=async(id)=>{
 
@@ -52,6 +75,7 @@ let formfill=async(id)=>{
    document.querySelector("#appointment-details1").innerHTML=formdata
 
 }
+// --------------update form-----------------
 
 let finalupdate=(id)=>{
 
@@ -91,3 +115,5 @@ try{
 
 
  }
+
+
