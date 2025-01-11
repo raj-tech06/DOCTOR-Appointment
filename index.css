@@ -76,6 +76,27 @@ body {
 }
 
 
+/* Media Queries for Responsiveness */
+@media (max-width: 768\px) {
+    .navbar {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        margin-top: 15px;
+    }
+
+    .nav-links li {
+        margin-bottom: 10px;
+    }
+
+    .login-btn {
+        margin-top: 20px;
+    }
+}
+
 
 /* ----------------------------------------home-------------------------- */
 
@@ -94,7 +115,7 @@ font-size: x-large;
     /* color: black; */
 }
 
- /* Video Background */
+    /* Video Background */
     .video-background {
         position: fixed;
         top: 0;
@@ -251,6 +272,55 @@ button:hover {
 }
 
 
+@media (max-width: 768px) {
+    #div1 {
+        margin-bottom: 0;
+    }
+    #div1 img{
+    margin-bottom: 0;
+        width: 150px;
+        
+    }
+    #div2{
+       /* display: none; */
+width: 200px;
+       margin-top: -309%;
+    }
+    #div1 img{
+        margin-top: 80%;
+        opacity: 0.2;
+    }
+    #div2 img{
+        margin-top: 30%;
+        margin-left: -50%;
+    }
+    #div3{
+        margin-top: 120%;
+        margin-bottom: 0;
+    }
+    #div3-text h1{
+        font-size: small;
+margin-top: 110%;
+    }
+    
+    #div4 img{
+        width: 50px;
+    }
+    .div4img4 img{
+        margin-left: 74%;
+        width: 100px;
+        height: 35vh;
+    }
+    .div4img4{
+        margin-left: -12%;
+        color:rgba(255, 255, 255, 0.564)
+    }
+}
+
+
+
+
+
 
 
 
@@ -329,97 +399,20 @@ button:hover {
     margin-left: 50%;
 }
 
+/* Responsive Styles */
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* ------------------Responsive Styles ---------------------------*/
-
-
-
-
-
-
-
- @media (max-width: 768px) {
-  
-    .navbar {
-      
-     width: 100%;
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .nav-links {
-        flex-direction: column;
-        margin-top: 15px;
-    }
-
-    .nav-links li {
-        margin-bottom: 10px;
-    }
-
-    .login-btn {
-        margin-top: 20px;
-    }
-
-    #div1 {
-        display: none;
-     
-    }
-
-    #div2 {
-    
-        margin-left: 45%;
-        width: 100px;
-        height: 55vh;
-        margin-top: -205%;
-    }
-
-    #div3 {
-        margin-top: 150%;
-        width: 100%;
-    }
-
-    #div3-text h1 {
-        font-size: 1rem;
-        margin-top: 8%;
-    }
-
-    .div4img4 img {
-        margin-left: 74%;
-        width: 100px;
-        height: 35vh;
-    }
-}
-
-    /* ----------------Footer Adjustments-------------------- */
-    
-
-    @media (max-width: 480px) {
-        
+@media (max-width: 768px) {
     .footimg1 img, .footimg2 img {
         width: 120px;
     }
 
-    #foottext-1 {
+  
+    #foottext-1{
         margin-top: -22%;
         margin-left: 0;
         text-align: center;
     }
+
 
     #foottext-3 ul {
         margin-top: -6%;
@@ -428,24 +421,29 @@ button:hover {
         justify-content: center;
         gap: 15px;
     }
+#foottext-4{
+    color: wheat;
+    margin-top: -26%;
+}
+foottext-5 p{
+    color: rgb(217, 208, 205);
+    margin-top: -26%;
+}
+/*   
+    #foot {
+        flex-direction: column;
+        height: auto;
+        gap: 10px;
+    } */
+}
 
-    #foottext-4 {
-        color: wheat;
-        margin-top: -26%;
-    }
-
-    #foottext-5 p {
-        color: rgb(217, 208, 205);
-        margin-top: -26%;
-    }
-  
-    .footimg1 img,
-    .footimg2 img {
+@media (max-width: 480px) {
+    .footimg1 img, .footimg2 img {
+        
         width: 100px;
     }
 
-    #foottext-1,
-    .foottexth4 {
+    #foottext-1, .foottexth4 {
         font-size: 15px;
         margin-top: -10%;
         margin-left: 0;
@@ -461,6 +459,7 @@ button:hover {
     }
 
     #foottext-3 ul {
+        /* font-size: 10px; */
         margin-top: -25%;
         font-size: 16px;
         margin-left: 40px;
@@ -468,10 +467,10 @@ button:hover {
         gap: 10px;
     }
 
-    #foottext-4,
-    #foottext-5 {
+    #foottext-4, #foottext-5 {
         font-size: 10px;
         color: wheat;
+        /* margin-top: 120%; */
         margin-left: 5%;
         margin-top: 15px;
         text-align: center;
@@ -482,4 +481,4 @@ button:hover {
         height: auto;
         gap: 10px;
     }
-} 
+}
