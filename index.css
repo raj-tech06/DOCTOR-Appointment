@@ -74,21 +74,6 @@ body {
 }
 
 
-.content {
-    text-align: center;
-    margin-top: 50px;
-}
-
-.content h1 {
-    font-size: 2.5rem;
-    color: #333;
-}
-
-.content p {
-    font-size: 1.2rem;
-    color: #555;
-}
-
 /* Media Queries for Responsiveness */
 @media (max-width: 768\px) {
     .navbar {
@@ -128,7 +113,43 @@ font-size: x-large;
     /* color: black; */
 }
 
+    /* Video Background */
+    .video-background {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;  
+    }
+    
+    .video-background video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover; 
+    }
+    
 
+.content {
+    
+    font-weight: bolder;
+    text-align: center;
+    margin-top: 50px;
+}
+
+.content h1 {
+    color: white;
+    font-size: 2.5rem;
+    /* color: #333; */
+}
+
+.content p {
+    color: white;
+    font-size: 1.2rem;
+    /* color: #555; */
+}
+
+   
 main {
     padding: 20px;
     display: flex;
@@ -178,6 +199,11 @@ button {
 button:hover {
     background-color: #45a049;
 }
+
+#element{
+    color: white;
+}
+
 
 
 

@@ -1,25 +1,6 @@
 // //----------------login/signup button click pop-up show karna-----------------
 
 
-
-
-// document.getElementById('loginBtn').addEventListener('click', function() {
-//     Swal.fire({
-//         title: 'Login / Sign Up',
-//         html: `
-//             <p>Please login to your account or sign up to get started.</p><br>
-//             <a href="drlogin.html" class="swal-link">Login Here</a> <br><br>
-//             <a href="drsignup.html" class="swal-link">Sign Up Here</a>
-//         `,
-//         icon: 'info',
-//         confirmButtonText: 'Close'
-//     });
-// });
-
-
-
-
-
 let loginsignbtn=()=>{
   
     Swal.fire({
@@ -35,9 +16,86 @@ let loginsignbtn=()=>{
         imageWidth: 100,
         imageHeight: 100,
         imageAlt: "Custom image",
+        // background: "wheat",
+        // background: "url(img/doct.jpg)",
+        // backdrop: `
+        //   rgba(0,0,123,0.4)
+        //   url("img/pin-code.png")
+        //   left top
+        //   no-repeat
+        // `,
         confirmButtonText: 'Close'
+
     });
 };
+
+
+
+// ----------------check appointment click--------------
+let check=()=>{
+
+  if(localStorage.getItem("check")=="true"){
+         location.href="book.html"
+       }
+       else{  
+         
+ Swal.fire({
+             imageUrl:"img/img1.png" ,
+             imageWidth: 270,
+             imageHeight: 90,
+             imageAlt: "Custom image",
+             confirmButtonText: 'Login First',
+             
+     html: `
+       <a href="drlogin.html" id="checklogin">Login</a>`,
+     
+
+     showCloseButton: true,
+     showCancelButton: true,
+     focusConfirm: false,
+     confirmButtonText: `
+       <i class="fa fa-thumbs-up"></i> Great!
+     `,
+     confirmButtonAriaLabel: "Thumbs up, great!",
+     cancelButtonText: `
+       <i class="fa fa-thumbs-down"></i> `,
+     cancelButtonAriaLabel: "Thumbs down",
+     
+
+     // width: 600,
+     // padding: "3em",
+     // color: "red",
+     background: "rgba(0, 0, 0, 0.856)",
+     backdrop: `
+       rgba(255, 255, 255, 0.764)
+       url("")
+       left top
+       no-repeat
+     `
+   
+   });
+ }
+ 
+// if(localStorage.getItem("check")=="true"){
+//     location.href="book.html"
+//     // location.href="drlogin.html";
+//   }
+//   else{
+//     // alert("please login first")
+
+//     Swal.fire({
+//         imageUrl:"img/img1.png" ,
+//         imageWidth: 270,
+//         imageHeight: 90,
+//         imageAlt: "Custom image",
+//         confirmButtonText: 'Login First'
+     
+//     });
+// }
+
+
+
+ }
 
 
 // --------------------------- login btn end---------------------------------------------------
@@ -145,72 +203,6 @@ let ins=()=>{
 // --------------------end---------------------
 
 
-
-// ----------------check appointment click--------------
-let check=()=>{
-
-     if(localStorage.getItem("check")=="true"){
-            location.href="book.html"
-          }
-          else{  
-            
-    Swal.fire({
-                imageUrl:"img/img1.png" ,
-                imageWidth: 270,
-                imageHeight: 90,
-                imageAlt: "Custom image",
-                confirmButtonText: 'Login First',
-                
-        html: `
-          <a href="drlogin.html" id="checklogin">Login</a>`,
-        
-
-        showCloseButton: true,
-        showCancelButton: true,
-        focusConfirm: false,
-        confirmButtonText: `
-          <i class="fa fa-thumbs-up"></i> Great!
-        `,
-        confirmButtonAriaLabel: "Thumbs up, great!",
-        cancelButtonText: `
-          <i class="fa fa-thumbs-down"></i> `,
-        cancelButtonAriaLabel: "Thumbs down",
-        
-
-        // width: 600,
-        // padding: "3em",
-        // color: "red",
-        background: "rgba(0, 0, 0, 0.856)",
-        backdrop: `
-          rgba(255, 255, 255, 0.764)
-          url("")
-          left top
-          no-repeat
-        `
-      
-      });
-    }
-    
-// if(localStorage.getItem("check")=="true"){
-//     location.href="book.html"
-//     // location.href="drlogin.html";
-//   }
-//   else{
-//     // alert("please login first")
-
-//     Swal.fire({
-//         imageUrl:"img/img1.png" ,
-//         imageWidth: 270,
-//         imageHeight: 90,
-//         imageAlt: "Custom image",
-//         confirmButtonText: 'Login First'
-        
-//     });
-// }
-
-
-
-    }
 
     
     
