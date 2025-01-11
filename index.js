@@ -21,18 +21,24 @@
 
 
 let loginsignbtn=()=>{
-
+  
     Swal.fire({
-        title: 'Login / Sign Up',
+       
+        // title: 'Login / Sign Up',
         html: `
-            <p>Please login to your account or sign up to get started.</p><br>
-            <a href="drlogin.html" class="swal-link">Login Here</a> <br><br>
-            <a href="drsignup.html" class="swal-link">Sign Up Here</a>
+       
+            <p>Please login to your account</p> <a href="drlogin.html" class="link">Login Here</a> <br> <br>
+             <p>Sign up to get started</p> <a href="drsignup.html" class="link">Sign Up Here</a>
         `,
-        icon: 'info',
+        // icon: 'info',
+        imageUrl:"img/pin-code.png" ,
+        imageWidth: 100,
+        imageHeight: 100,
+        imageAlt: "Custom image",
         confirmButtonText: 'Close'
     });
 };
+
 
 // --------------------------- login btn end---------------------------------------------------
 
@@ -140,17 +146,72 @@ let ins=()=>{
 
 
 
+// ----------------check appointment click--------------
 let check=()=>{
-    
-if(localStorage.getItem("check")=="true"){
-    location.href="book.html"
-    // location.href="drlogin.html";
-  }
-  else{
-    // alert("please login first")
-    Swal.fire("login first");
-}
+
+     if(localStorage.getItem("check")=="true"){
+            location.href="book.html"
+          }
+          else{  
+            
+    Swal.fire({
+                imageUrl:"img/img1.png" ,
+                imageWidth: 270,
+                imageHeight: 90,
+                imageAlt: "Custom image",
+                confirmButtonText: 'Login First',
+                
+        html: `
+          <a href="drlogin.html" id="checklogin">Login</a>`,
+        
+
+        showCloseButton: true,
+        showCancelButton: true,
+        focusConfirm: false,
+        confirmButtonText: `
+          <i class="fa fa-thumbs-up"></i> Great!
+        `,
+        confirmButtonAriaLabel: "Thumbs up, great!",
+        cancelButtonText: `
+          <i class="fa fa-thumbs-down"></i> `,
+        cancelButtonAriaLabel: "Thumbs down",
+        
+
+        // width: 600,
+        // padding: "3em",
+        // color: "red",
+        background: "rgba(0, 0, 0, 0.856)",
+        backdrop: `
+          rgba(255, 255, 255, 0.764)
+          url("")
+          left top
+          no-repeat
+        `
+      
+      });
     }
+    
+// if(localStorage.getItem("check")=="true"){
+//     location.href="book.html"
+//     // location.href="drlogin.html";
+//   }
+//   else{
+//     // alert("please login first")
+
+//     Swal.fire({
+//         imageUrl:"img/img1.png" ,
+//         imageWidth: 270,
+//         imageHeight: 90,
+//         imageAlt: "Custom image",
+//         confirmButtonText: 'Login First'
+        
+//     });
+// }
+
+
+
+    }
+
     
     
 
