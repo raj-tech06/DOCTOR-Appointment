@@ -404,11 +404,13 @@ button:hover {
         width: 100px;
         height: 35vh;
     }
-        
+}
 
     /* ----------------Footer Adjustments-------------------- */
     
 
+    @media (max-width: 480px) {
+        
     .footimg1 img, .footimg2 img {
         width: 120px;
     }
