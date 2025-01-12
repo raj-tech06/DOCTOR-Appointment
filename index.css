@@ -76,8 +76,8 @@ body {
 }
 
 
-/* Media Queries for Responsiveness */
-@media (max-width: 768\px) {
+/*----------------- Media Queries for nav Responsiveness ------------------ */
+@media (max-width: 768px) {
     .navbar {
         flex-direction: column;
         text-align: center;
@@ -390,16 +390,24 @@ margin-top: 110%;
 }
 
 #foottext-4{
+    color: white;
     margin-top: 60px;
     margin-left: 30%;
 }
 
 #foottext-5{
+    color: white;
     margin-top: -19px;
     margin-left: 50%;
 }
 
 /* Responsive Styles */
+
+html{
+    overflow-x: hidden;
+}
+
+
 
 @media (max-width: 768px) {
     .footimg1 img, .footimg2 img {
@@ -429,38 +437,54 @@ foottext-5 p{
     color: rgb(217, 208, 205);
     margin-top: -26%;
 }
-/*   
+  
     #foot {
         flex-direction: column;
         height: auto;
         gap: 10px;
-    } */
+    }
 }
 
 @media (max-width: 480px) {
+
+    #div4 img{
+        width: 50px;
+    }
+    .div4img4 img{
+        margin-left: 74%;
+        width: 100px;
+        height: 35vh;
+    }
+    .div4img4{
+        margin-left: -12%;
+        color:rgba(255, 255, 255, 0.564)
+    }
     .footimg1 img, .footimg2 img {
         
         width: 100px;
     }
 
     #foottext-1, .foottexth4 {
+        /* position: fixed; */
         font-size: 15px;
-        margin-top: -10%;
+        margin-top: -30%;
         margin-left: 0;
         text-align: center;
     }
 
     #foottext-2 ul {
+        /* position: fixed; */
         font-size: 10px;
-        margin-top: -15%;
-        margin-left: 0;
+        /* margin-top: 10%; */
+        margin-left: 20px;
         justify-content: center;
-        gap: 8px;
+        gap: 19px;
     }
 
     #foottext-3 ul {
-        /* font-size: 10px; */
-        margin-top: -25%;
+        position: fixed;
+        font-size: 10px;
+        /* margin-top: -55%; */
         font-size: 16px;
         margin-left: 40px;
         justify-content: center;
