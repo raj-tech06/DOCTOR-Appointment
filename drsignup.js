@@ -2,7 +2,7 @@ document.getElementById('signupForm').addEventListener('submit', function(event)
     event.preventDefault(); // Prevent form submission
     
     // Get form values
-    let username = document.getElementById('username').value;
+    let number = document.getElementById('Number').value;
     let email = document.getElementById('email').value;
     let password = document.getElementById('password').value;
     let confirmPassword = document.getElementById('confirmPassword').value;
@@ -14,7 +14,7 @@ document.getElementById('signupForm').addEventListener('submit', function(event)
     }
 
     // Save the data in localStorage (for demo purposes)
-    localStorage.setItem('username', username);
+    localStorage.setItem('Number', number);
     localStorage.setItem('email', email);
     localStorage.setItem('password', password);
 

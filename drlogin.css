@@ -33,6 +33,7 @@ label {
     color: #333;
     margin-bottom: 5px;
     display: block;
+    transition: transform 0.3s ease, font-size 0.3s ease;
 }
 
 input {
@@ -46,11 +47,22 @@ input {
     transition: border-color 0.3s ease-in-out;
 }
 
-input:focus {
+/* input:focus {
     border-color: #00796b;
+} */
+
+input:focus + label{
+    transform: translateY(-10px);
+    /* margin-top: -2px; */
+    font-size: 2rem;
+    /* color: #00796b; */
+    color: white;
 }
 
+
+
 button {
+    margin-top: 10px;
     width: 100%;
     padding: 12px;
     background-color: #00796b;
@@ -67,12 +79,14 @@ button:hover {
 }
 
 p {
+    color: white;
     margin-top: 15px;
     font-size: 1rem;
 }
 
 a {
-    color: #00796b;
+    /* color: #00796b; */
+    color: blue;
     text-decoration: none;
     font-weight: bold;
 }
@@ -81,3 +95,47 @@ a:hover {
     text-decoration: underline;
 }
 
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        margin: 40px auto;
+        padding: 20px;
+    }
+
+    h2 {
+        font-size: 1.8rem;
+    }
+
+    button {
+        font-size: 1rem;
+    }
+
+    p {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        margin: 10px;
+        padding: 15px;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    input {
+        padding: 10px;
+        font-size: 0.9rem;
+    }
+
+    button {
+        padding: 10px;
+        font-size: 0.9rem;
+    }
+
+    p {
+        font-size: 0.8rem;
+    }
+}

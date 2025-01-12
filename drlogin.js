@@ -2,15 +2,15 @@ document.getElementById('loginForm').addEventListener('submit', function(event) 
     event.preventDefault(); // Prevent form submission
 
     // Get form values
-    let loginEmail = document.getElementById('loginEmail').value;
+    let loginNumber = document.getElementById('loginNumber').value;
     let loginPassword = document.getElementById('loginPassword').value;
 
     // Get stored data from localStorage
-    let storedEmail = localStorage.getItem('email');
+    let storedNumber = localStorage.getItem('Number');
     let storedPassword = localStorage.getItem('password');
 
     // Validate login credentials
-    if (loginEmail === storedEmail && loginPassword === storedPassword) {
+    if (loginNumber === storedNumber && loginPassword === storedPassword) {
         localStorage.setItem("islogin",true)
         localStorage.setItem("check", true)
         // alert("Login successful!");
